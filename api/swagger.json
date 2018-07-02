@@ -1,0 +1,154 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Local Node.js Application API",
+      "description": "Local Node.js Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:4000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Todos",
+        "description": "API for todos in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/todos": {
+        "post": {
+          "tags": [
+            "Todos"
+          ],
+          "summary": "Create new todo in system",
+          "description": "Create new todo in system",
+          "parameters": [
+            {
+              "name": "todo",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Todo"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New todo is created",
+              "schema": {
+                "$ref": "#/definitions/Todo"
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "Todos"
+          ],
+          "summary": "Get all Todos in system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Todo"
+              }
+            }
+          }
+        }
+      },
+      "/todos/{todoId}": {
+        "parameters": [
+          {
+            "name": "todoId",
+            "in": "path",
+            "required": true,
+            "description": "ID of todo that we want to find",
+            "type": "string"
+          }
+        ],
+        "get": {
+          "tags": [
+            "Todos"
+          ],
+          "summary": "Get todo with given ID",
+          "responses": {
+            "200": {
+              "description": "Todo is found",
+              "schema": {
+                "$ref": "#/definitions/Todo"
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete todo with given ID",
+          "tags": [
+            "Todos"
+          ],
+          "responses": {
+            "200": {
+              "description": "Todo is deleted",
+              "schema": {
+                "$ref": "#/definitions/Todo"
+              }
+            }
+          }
+        },
+        "put": {
+          "summary": "Update todo with given ID",
+          "tags": [
+            "Todos"
+          ],
+          "parameters": [
+            {
+              "name": "todo",
+              "in": "body",
+              "description": "Todo with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/Todo"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Todo is updated",
+              "schema": {
+                "$ref": "#/definitions/Todo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Todo": {
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        }
+      },
+      "Todos": {
+        "type": "array",
+        "$ref": "#/definitions/Todo"
+      }
+    }
+  }

@@ -1,0 +1,35 @@
+.button{
+    border-radius: 5px;
+    background-color: $color-midnight-blue;
+    padding: 10px 25px;
+    @include font-regular;
+    &:hover, &:focus{
+        background-color: $color-st-tropaz;
+    }
+    &.secondary{
+        background-color: transparent;
+        border: 1px solid $color-midnight-blue;
+        color: $color-midnight-blue;
+        &:hover, &:focus{
+            background-color: $color-st-tropaz;
+            border-color: $color-midnight-blue;
+            color: $color-white;
+        }
+        &:disabled{
+            background-color: transparent;
+            color: $color-midnight-blue;
+            opacity: 0.5;
+        }
+    }
+    .button-group &{
+        border-radius: 0px;
+        &:first-child{
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        &:last-child{
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px; 
+        }
+    }
+}

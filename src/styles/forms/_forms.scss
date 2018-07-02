@@ -1,0 +1,124 @@
+.input{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
+    float: left;
+    &__required{
+        position: absolute;
+        right: 8px;
+        top: 5px;
+        opacity: 1;
+        transition: opacity 0.3s;   
+    }
+    &--active{
+        .input__required{
+            opacity: 0;
+        }
+    }    
+    &__field{
+        position: relative;
+        text-align: left;
+        display: block;
+        float: right;
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        margin: 0 0 rem-calc(25);
+        border: 1px $input-color-border solid;
+        background-color: $color-white;
+        border-radius: 5px;
+        &--error{
+            border-color: $color-error;
+        }
+        &:focus &, .input--active &{
+            //padding: 15px 10px 5px 10px;
+        }
+    }
+    &__label{
+        width: 100%;
+        padding: 10px;
+        position: absolute;
+        text-align: left;
+        pointer-events: none;
+        left: 0;
+        display: inline-block;
+        user-select: none;
+        transition: transform 0.3s, background-color 0.3s;    
+        @include font-light;
+        &-content{
+            position: relative;
+            height: 100%;
+            display: block;
+            padding: 10px 0;
+            width: 100%;
+            padding: 0;
+            transform-origin: 0 0;
+            transition: transform 0.3s, color 0.3s;
+            &:focus &, .input--active &{
+                width: fit-content;
+                color: $input-color-border;
+                background: white;
+                transform: translate3d(0, -20px, 0) scale3d(0.8, 0.8, 1);
+            }
+        }
+    }
+    &__error{
+        color: $color-error;
+        position: absolute;
+        left: 10px;
+        bottom: 5px;
+        font-size: rem-calc(12);
+    }
+
+}
+
+label{
+    font-size: rem-calc(16);
+}
+
+.styled-checkbox {
+    position: absolute;
+    opacity: 0;
+    & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        margin: 0 0 0 30px;
+        &:before{
+            position: absolute;
+            content: '';
+            margin-right: 10px;
+            display: inline-block;
+            left: -30px;
+            vertical-align: middle;
+            width: 20px;
+            top: 3px;
+            height: 20px;
+            background: $white;
+            border-radius: 5px;
+            margin-bottom: 2px;
+            border: 1px solid $input-color-border;
+        }
+    }
+    &:required{
+        
+    }
+    &:checked{
+        + label:after {
+            content: $fa-var-check;
+            font-family: "FontAwesome";
+            position: absolute;
+            left: -30px;
+            top: 3px;
+            color: $color-midnight-blue;
+            font-size: 15px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 19px;
+        }
+    }
+}

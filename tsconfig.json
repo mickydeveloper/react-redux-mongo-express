@@ -1,0 +1,32 @@
+﻿{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "es6",
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "noImplicitThis": false,
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "baseUrl": "./src",
+        "paths": {
+            "*": ["./types/*"]
+        },
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
+    },
+    "include": [
+      "src/**/*",
+      "src/*"
+    ],
+    "exclude": [
+        "dist",
+        "**/*.spec.tsx"
+    ]
+}

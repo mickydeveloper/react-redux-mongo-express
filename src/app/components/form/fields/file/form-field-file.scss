@@ -1,0 +1,46 @@
+.form-field-file{
+    margin-bottom: rem-calc(25);
+    border-radius: 5px;
+    background-color: $color-white;
+    border: 1px $input-color-border solid;
+    input[type="file"]{
+        position: relative;
+        margin: 0;
+        height: 150px;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+    }
+    &__placeholder{
+        height: 150px;
+        width: 100%;
+    }
+    &__icon{
+        height: 46px;
+        width: 46px;
+        background-color: $color-midnight-blue;
+        border: 2px solid $color-st-tropaz;
+        border-radius: 100%;
+        color: $color-white;
+        position: relative;
+        cursor: pointer;
+        top: 50%;
+        left: 50%;
+        margin-left: -23px;
+        margin-top: -23px;
+        box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
+        &:before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -8px;
+            margin-left: -6px;
+        }
+    }
+    &__image{
+        height: 150px;
+        z-index: 2;
+        margin: 0 auto;
+        display: block;
+    }
+}

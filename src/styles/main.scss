@@ -1,0 +1,18 @@
+﻿@import "foundation";
+@import "settings";
+@import "variables";
+@import "typography";
+@import "functions";
+@import "mixins";
+@import "vendor/font-awesome/font-awesome";
+@import "forms/forms";
+@import "../app/**/*.scss";
+
+html{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+body {
+    @include font-light;
+    padding: 0.8rem 0;
+}

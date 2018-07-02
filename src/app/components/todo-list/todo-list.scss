@@ -1,0 +1,15 @@
+.todo-list .add-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-midnight-blue;
+    color: $color-white;
+    box-shadow: 0px 0px 20px $box-shadow;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    font-size: 1.1rem;
+}

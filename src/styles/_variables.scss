@@ -1,0 +1,19 @@
+﻿$color-tangerine: #E59F00 !global;
+$color-gallery: #F0F0F0 !global;
+$color-mine-shaft: #3C3C3C !global;
+$color-alabaster: #f2f4f7 !global;
+$color-st-tropaz: #244a8d !global;
+$color-st-tropaz-darker: darken($color-st-tropaz, 10);
+$color-midnight-blue: #032b5b !global;
+$color-gray: #919191 !global;
+$color-white: #FFFFFF !global;
+$color-valencia: #d7394e !global;
+$color-cod-gray: #1E1E1E !global;
+$color-font: #0a0a0a;
+$color-error: $color-valencia;
+
+$box-shadow: rgba(0,0,0,0.1);
+
+$input-color-placeholder: $color-gray;
+$input-color-border: $color-gray;
+$label-color: $color-gray;
